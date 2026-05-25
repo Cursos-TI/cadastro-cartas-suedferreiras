@@ -1,0 +1,118 @@
+#include <stdio.h>
+
+int main() {
+    
+    // definição das variáveis:
+    // carta 1
+    
+    char estado;
+    char codigo[10];
+    char cidade[50];
+    int populacao;
+    int pontotur;
+    float numero;
+    float area;
+    float pib;
+
+    // carta 2
+
+    char estado2;
+    char codigo2[10];
+    char cidade2[50];
+    int populacao2;
+    int pontotur2;
+    float numero2;
+    float area2;
+    float pib2;
+
+    // Área para definição das variáveis para armazenar as propriedades das cidades
+
+    // introdução ao usuário sobre o jogo:
+    printf("Olá,seja bem-vindo ao Super Trunfo de Paises!\nUm jogo para você se divertir com cartas.\nTeremos 3 Fases, e você se encontra agora na 1ª fase, a qual será cadastrar suas 2 cartas com as seguintes informações:\n");
+    printf("Serão 8 perguntas para cada Carta :D\n");
+
+
+
+    // começo da interação (entrada e saída de dados)
+    // CARTA 1
+    printf("Carta 1\n1) Escolha uma letra de A até H para ser o Estado: ");
+    scanf(" %c", &estado);
+    
+    printf("2) Ok, você escolheu %c, agora escolha entre 01, 02, 03 ou 04: ", estado);
+    scanf("%f", &numero); 
+    
+    printf(" Obgd, esse será seu 1º código: %c0%0.f\n", estado, numero);
+    printf("3) Digite o código mostrado: ");
+    scanf(" %s", codigo);
+
+    printf("4) Me diga qual o nome (não pode ser composto!) da sua primeira cidade: ");
+    scanf("%s", cidade);
+
+    printf("5) Qual o número de habitantes terá %s?: ", cidade );
+    scanf("%d", &populacao);
+
+    printf("6) %d hab. por quantos km²?: ", populacao);
+    scanf("%f", &area);
+
+    printf("7) Está quase acabando! Diga qual sera o Produto Interno Bruto (PIB), da sua cidade %s:", cidade);
+    scanf("%f", &pib);
+
+    printf("8) Número de pontos turisticos: ");
+    scanf("%d", &pontotur);
+
+
+    
+    // carta 2
+    printf("Carta 2\n");
+    printf("1) Escolha uma letra de A até H para ser o Estado, diferente da primeira: ");
+    scanf(" %c", &estado2);
+    
+    printf("2) Escolha entre 01, 02, 03 ou 04, diferente da primeira carta: ");
+    scanf("%f", &numero2); 
+    
+    printf(" Seu 2º código: %c0%0.f\n", estado2, numero2);
+    printf("3) Digite o código mostrado: ");
+    scanf(" %s", codigo2);
+
+    printf("4) Me diga qual o nome (não pode ser composto!) da sua segunda cidade: ");
+    scanf("%s", cidade2);
+
+    printf("5) Número de habitantes de %s: ", cidade2 );
+    scanf("%d", &populacao2);
+
+    printf("6) %d hab. por quantos km²?: ", populacao2);
+    scanf("%f", &area2);
+
+    printf("7) Produto Interno Bruto (PIB), da sua 2ª cidade, %s:", cidade2);
+    scanf("%f", &pib2);
+
+    printf("8) Número de pontos turisticos: ");
+    scanf("%d", &pontotur2);
+
+
+
+    // Área para exibição dos dados da cidade
+
+    printf("Essas são suas Cartas:\n");
+
+    //carta1
+    printf("CARTA 1:\n");
+    printf("ESTADO: %c\n", estado);
+    printf("CÓDIGO: %s\n", codigo);
+    printf("CIDADE: %s\n", cidade);
+    printf("POPULAÇÃO: %d habitantes\n", populacao);
+    printf("ÁREA: %0.f Km²\n", area);
+    printf("PONTOS TURÍSTICOS: %d locais\n", pontotur);
+
+    //carta2
+    printf("\nCARTA 2:\n");
+    printf("ESTADO: %c\n", estado2);
+    printf("CÓDIGO: %s\n", codigo2);
+    printf("CIDADE: %s\n", cidade2);
+    printf("POPULAÇÃO: %d habitantes\n", populacao2);
+    printf("ÁREA: %0.f Km²\n", area2);
+    printf("PONTOS TURÍSTICOS: %d locais\n", pontotur2);
+    
+    
+    return 0;
+}
