@@ -5,7 +5,7 @@ int main() {
     // definição das variáveis:
     // carta 1
     
-    char estado;
+    char estado[10];
     char codigo[10];
     char cidade[50];
     unsigned long int populacao;
@@ -20,7 +20,7 @@ int main() {
     
     // carta 2
 
-    char estado2;
+    char estado2[10];
     char codigo2[10];
     char cidade2[50];
     unsigned long int populacao2;
@@ -44,13 +44,13 @@ int main() {
 
     // começo da interação (entrada e saída de dados)
     // CARTA 1
-    printf("Carta 1\n1) Escolha uma letra de A até H para ser o Estado: ");
-    scanf(" %c", &estado);
+    printf("Carta 1\n1) Escreva a sigla (ex. SP) do seu estado: ");
+    scanf(" %s", estado);
     
-    printf("2) Ok, você escolheu %c, agora escolha entre 01, 02, 03 ou 04: ", estado);
+    printf("2) Ok, você escolheu %s, agora escolha entre 01, 02, 03 ou 04: ", estado);
     scanf("%f", &numero); 
     
-    printf(" Obgd, esse será seu 1º código: %c0%0.f\n", estado, numero);
+    printf(" Obgd, esse será seu 1º código: %s0%0.f\n", estado, numero);
     printf("3) Digite o código mostrado: ");
     scanf(" %s", codigo);
 
@@ -73,13 +73,13 @@ int main() {
     
     // carta 2
     printf("Carta 2\n");
-    printf("1) Escolha uma letra de A até H para ser o Estado, diferente da primeira: ");
-    scanf(" %c", &estado2);
+    printf("1) Escolha outra sigla (ex. RS) para o segundo estado: ");
+    scanf("%s", estado2);
     
     printf("2) Escolha entre 01, 02, 03 ou 04, diferente da primeira carta: ");
     scanf(" %f", &numero2); 
     
-    printf(" Seu 2º código: %c0%0.f\n", estado2, numero2);
+    printf(" Seu 2º código: %s0%0.f\n", estado2, numero2);
     printf("3) Digite o código mostrado: ");
     scanf(" %s", codigo2);
 
@@ -106,7 +106,7 @@ int main() {
 
     //carta1
     printf("CARTA 1:\n");
-    printf("ESTADO: %c\n", estado);
+    printf("ESTADO: %s\n", estado);
     printf("CÓDIGO: %s\n", codigo);
     printf("CIDADE: %s\n", cidade);
     printf("POPULAÇÃO: %lu habitantes\n", populacao);
@@ -128,7 +128,7 @@ int main() {
 
     //carta2
     printf("\nCARTA 2:\n");
-    printf("ESTADO: %c\n", estado2);
+    printf("ESTADO: %s\n", estado2);
     printf("CÓDIGO: %s\n", codigo2);
     printf("CIDADE: %s\n", cidade2);
     printf("POPULAÇÃO: %lu habitantes\n", populacao2);
@@ -168,7 +168,16 @@ int main() {
     printf("DENSIDADE DEMOGRÁFICA: %d\n", comp6);
     printf("SUPERPODER: %d\n", comp7);
 
-
+    printf("Carta 1 - %s (%s): %.2f\n", cidade, estado, superpoder1);
+    printf("Carta 2 - %s (%s): %.2f\n", cidade2, estado2, superpoder2);
     
+
+    if( superpoder1 > superpoder2){
+        printf("A Carta 1 (%s) ganhou!\n", cidade);
+    } else {
+        printf("A Carta 2 (%s) ganhou!\n", cidade2);
+    }
+
+
     return 0;
 }
