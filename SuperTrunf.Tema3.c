@@ -3,54 +3,43 @@
 int main() {
     
     // definição das variáveis:
-    // carta 1
-    
-    char estado[10];
-    char codigo[10];
-    char cidade[50];
-    unsigned long int populacao;
-    int pontotur;
-    float numero;
-    float area;
-    float pib;
-    float demo1; //densidade demografica 1
-    float pibcap1; // pib per capita 1
-    float superpoder1;
+    // 1 para carta 1. 2 para carta 2.
+    char estado[10], estado2[10], codigo[10], codigo2[10], cidade[50], cidade2[50];
+    unsigned long int populacao, populacao2;
+    int pontotur, pontotur2;
+    float numero, area, pib, demo1, pibcap1, superpoder1;
+    float numero2, area2, pib2, demo2, pibcap2, superpoder2;
+    // pontotur: pontos turísticos
+    // numero: o numero que a pessoa deseja por no código da carta
+    // demo: densidade demografica 
+    // pibcap: pib per capita 
 
-    
-    // carta 2
-
-    char estado2[10];
-    char codigo2[10];
-    char cidade2[50];
-    unsigned long int populacao2 = 2198002;
-    int pontotur2;
-    float numero2;
-    float area2;
-    float pib2;
-    float demo2; //densidade demografica 2
-    float pibcap2; // pib per capita 2
-    float superpoder2;
-
-
-
-    // Área para definição das variáveis para armazenar as propriedades das cidades
 
     // introdução ao usuário sobre o jogo:
-    printf("Olá,seja bem-vindo ao Super Trunfo de Paises!\nUm jogo para você se divertir com cartas.\nTeremos 3 Fases, e você se encontra agora na 1ª fase, a qual será cadastrar suas 2 cartas com as seguintes informações:\n");
+    printf("Olá, seja bem-vindo ao Super Trunfo de Paises!\nUm jogo para você se divertir com cartas.\n\nTeremos 3 Fases:\n");
+    printf("Fase 1 - escrever as características dos atributos das duas cartas;\n");
+    printf("Fase 2 - escolher a comparação entre atributos da carta 1 e carta 2;\n");
+    printf("Fase 3 - expor o ganhador;\n");
+    
+    
+    // FASE 1
     printf("\nFASE 1\n");
     printf("Serão 8 perguntas para cada Carta :D\n");
 
-
-
+    
     // começo da interação (entrada e saída de dados)
     // CARTA 1
     printf("\nCarta 1\n1) Escreva a sigla (ex. SP) do seu estado: ");
     scanf(" %s", estado);
     
-    printf("2) Ok, você escolheu %s, agora escolha entre 01, 02, 03 ou 04: ", estado);
-    scanf("%f", &numero); 
-    
+
+    do {
+        printf("2) Ok, você escolheu %s, agora escolha entre 1, 2, 3 ou 4: ", estado);
+        scanf("%f", &numero);
+
+        // strcmp retorna 0 quando as duas strings são exatamente iguais
+    } while (numero < 1 || numero > 4);
+
     printf(" Obgd, esse será seu 1º código: %s0%0.f\n", estado, numero);
     printf("3) Digite o código mostrado: ");
     scanf(" %s", codigo);
@@ -70,15 +59,21 @@ int main() {
     printf("8) Número de pontos turisticos: ");
     scanf("%d", &pontotur);
 
-
     
     //carta 2
     printf("\nCarta 2\n");
+
+
     printf("1) Escolha outra sigla (ex. RS) para o segundo estado: ");
     scanf("%s", estado2);
-    
-    printf("2) Escolha entre 01, 02, 03 ou 04, diferente da primeira carta: ");
-    scanf(" %f", &numero2); 
+
+
+    do {
+        printf("2) Ok, você escolheu %s, agora escolha entre 1, 2, 3 ou 4: ", estado2);
+        scanf("%f", &numero2);
+
+        // strcmp retorna 0 quando as duas strings são exatamente iguais
+    } while (numero2 < 1 || numero2 > 4);
     
     printf(" Seu 2º código: %s0%0.f\n", estado2, numero2);
     printf("3) Digite o código mostrado: ");
@@ -99,11 +94,7 @@ int main() {
     printf("8) Número de pontos turisticos: ");
     scanf("%d", &pontotur2);
     
-
-
-
     // Área para exibição dos dados da cidade
-
     printf("Essas são suas Cartas:\n");
 
     //carta1
@@ -125,9 +116,7 @@ int main() {
     superpoder1 = populacao + pontotur + area + pib + ( 1 / demo1) + pibcap1;
     printf("SUPERPODER: %.2f\n", superpoder1);
 
-
-
-
+    
     //carta2
     printf("\nCARTA 2:\n");
     printf("ESTADO: %s\n", estado2);
@@ -147,12 +136,8 @@ int main() {
     superpoder2 = populacao2 + pontotur2 + area2 + pib2 + ( 1 / demo2) + pibcap2;
     printf("SUPERPODER: %.2f\n", superpoder2);
 
-
-
     //comparação entre cartas:
-
-      
-    /* NIVEL MESTRE 1 TEMA
+    /* NIVEL MESTRE 1º TEMA
     int comp1 = populacao > populacao2;
     int comp2 = area > area2;
     int comp3 = pontotur > pontotur2;
@@ -160,36 +145,28 @@ int main() {
     int comp5 = pibcap1 > pibcap2;
     int comp6 = (1 / demo1) > (1 / demo2);
     int comp7 = superpoder1 > superpoder2;
-    
-
-   
-   
     printf("\nPOPULAÇÃO: %d\n", comp1);
-
     printf("ÁREA: %d\n", comp2);
     printf("PONTOS TURÍSTICOS: %d\n", comp3);
     printf("PIB: %d\n", comp4);
     printf("PIB PER CAPITA: %d\n", comp5);
     printf("DENSIDADE DEMOGRÁFICA: %d\n", comp6);
     printf("SUPERPODER: %d\n", comp7);
-
     printf("\nCarta 1 - %s (%s): %.2f\n", cidade, estado, superpoder1);
     */
     
-
-    // nivel mestre 2 tema: ebaaaa termineiiiiii :P
-
+    
+    // NÍVEL MESTRE 2º TEMA :P
+    // TEMA 2:
     char atributo, atributo2;
     printf("\n*** Quem vence entre Carta 1 e Carta 2? ***\n\nFASE 2\n ");
     printf("\nNessa fase vocẽ irá comparar 2 vezes, ambas as cartas, escolhendo atributos.\n");
-
     
     printf("Digite a letra de um atributo para a primeira comparação entre as 2 cartas e ver qual valor ganha: \n");
     printf(" A. ÁREA\n B. PIB\n C. PIB per CAPTA\n D. DENSIDADE DEMOGRÁFICA \n P. POPULAÇÃO \n T. PONTOS TURÍSTICOS\n ");
     scanf(" %c", &atributo);
 
-    switch (atributo)
-        {
+    switch (atributo){
         case 'A':
         case 'a':
             atributo = area > area2 ? 1 : 0;    
@@ -201,9 +178,6 @@ int main() {
                 printf("Entre %s com área de %.0f km² e %s com área de %.0f km², a cidade %s ganha\n", cidade, area, cidade2, area2, cidade2);
             }
             break;
-
-          
-
         case 'B':
         case 'b':
             atributo = pib > pib2 ? 1 : 0;
@@ -215,7 +189,6 @@ int main() {
                 printf("Entre %s com PIB de %.2f reais e %s com PIB de %.2f reais, a cidade %s ganha\n", cidade, pib, cidade2, pib2, cidade2);
             }
             break;
-
         case 'C':
         case 'c':
             atributo = pibcap1 > pibcap2 ? 1 : 0;
@@ -227,8 +200,6 @@ int main() {
                 printf("Entre %s com PIB de %.2f reais e %s com PIB de %.2f reais, a cidade %s ganha\n", cidade, pibcap1, cidade2, pibcap2, cidade2);
             }
             break;
-
-
         case 'D':
         case 'd':
             atributo = (1 / demo1) > (1 / demo2) ? 1 : 0;
@@ -240,7 +211,6 @@ int main() {
                 printf("Entre %s com %.2f de densidade demográfica e %s com o %.2f de densidade demográfica, a cidade %s ganha\n", cidade, demo1, cidade2, demo2, cidade2);
             }
             break;
-
         case 'P':
         case 'p':
             atributo = populacao > populacao2 ? 1 : 0;
@@ -252,7 +222,6 @@ int main() {
                 printf("Entre %s com a população %lu e %s com a população %lu, a cidade %s ganha\n", cidade, populacao, cidade2, populacao2, cidade2);
             }
             break;
-
         case 'T':
         case 't':
             atributo = pontotur > pontotur2 ? 1 : 0;
@@ -269,17 +238,13 @@ int main() {
             break;
         }
 
-    
-
     printf("escolha o segundo atributo para a segunda comparação:\n");
     scanf(" %c", &atributo2);
 
-    if (atributo == atributo2 )
-    {
+    if (atributo == atributo2 ){
         printf("voce escolheu o mesmo atributo. \n");
     } else {
-        switch (atributo2)
-        {
+        switch (atributo2){
         case 'A':
         case 'a':
             atributo2 = area > area2 ? 1 : 0;
@@ -291,7 +256,6 @@ int main() {
                 printf("Entre %s com área de %.0f km² e %s com área de %.0f km², a cidade %s ganha\n", cidade, area, cidade2, area2, cidade2);
             }
             break;
-
         case 'B':
         case 'b':
             atributo2 = pib > pib2 ? 1 : 0;
@@ -303,7 +267,6 @@ int main() {
                 printf("Entre %s com PIB de %.2f reais e %s com PIB de %.2f reais, a cidade %s ganha\n", cidade, pib, cidade2, pib2, cidade2);
             }
             break;
-
         case 'C':
         case 'c':
             atributo2 = pibcap1 > pibcap2 ? 1 : 0;
@@ -315,8 +278,6 @@ int main() {
                 printf("Entre %s com PIB de %.2f reais e %s com PIB de %.2f reais, a cidade %s ganha\n", cidade, pibcap1, cidade2, pibcap2, cidade2);
             }
             break;
-
-
         case 'D':
         case 'd':
             atributo2 = (1 / demo1) > (1 / demo2) ? 1 : 0;
@@ -328,7 +289,6 @@ int main() {
                 printf("Entre %s com %.2f de densidade demográfica e %s com o %.2f de densidade demográfica, a cidade %s ganha\n", cidade, demo1, cidade2, demo2, cidade2);
             }
             break;
-
         case 'P':
         case 'p':
             atributo2 = populacao > populacao2 ? 1 : 0;
@@ -340,7 +300,6 @@ int main() {
                 printf("Entre %s com a população %lu e %s com a população %lu, a cidade %s ganha\n", cidade, populacao, cidade2, populacao2, cidade2);
             }
             break;
-
         case 'T':
         case 't':
             atributo2 = pontotur > pontotur2 ? 1 : 0;
@@ -359,7 +318,7 @@ int main() {
     }
     
 
-    
+    // FASE 3:
     printf("\n****EAE, QUEM GANHOU??****\n");
     printf("\nFASE 3 - FINAL -\n");
     printf("\nCom base nos atributos que vocễ escolheu, veremos se vocẽ obteve pontuação nos dois ou não!\n");
