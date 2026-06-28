@@ -157,7 +157,7 @@ int main() {
     
     
     // NÍVEL MESTRE 2º TEMA :P
-    // TEMA 2:
+    // TEMA 3:
     char atributo, atributo2;
     printf("\n*** Quem vence entre Carta 1 e Carta 2? ***\n\nFASE 2\n ");
     printf("\nNessa fase vocẽ irá comparar 2 vezes, ambas as cartas, escolhendo atributos.\n");
